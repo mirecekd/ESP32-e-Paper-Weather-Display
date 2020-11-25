@@ -8,4 +8,6 @@
 
 ![photo1](IMG_20201125_135616.jpg)
 
+![photo3](IMG_20201125_170808.jpg)
+
 STLs included, derived from https://www.thingiverse.com/thing:3996613
