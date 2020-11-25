@@ -1,4 +1,4 @@
-# My modification of G6EJD/ESP32-e-Paper-Weather-Display
+# Modification of G6EJD/ESP32-e-Paper-Weather-Display
 
 STLs included
 
