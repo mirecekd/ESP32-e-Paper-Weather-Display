@@ -176,7 +176,8 @@ void DisplayMainWeatherSection(int x, int y) {
   DisplayTemperatureSection(x + 154, y - 81, 137, 100);
   DisplayPressureSection(x + 281, y - 81, WxConditions[0].Pressure, WxConditions[0].Trend, 137, 100);
   DisplayPrecipitationSection(x + 411, y - 81, 137, 100);
-  DisplayForecastTextSection(x + 97, y + 20, 409, 65);
+  DisplayForecastTextSection(x + 233, y + 20, 273, 65);
+  DisplayApparentTemperatureSection(x + 154, y + 18, 135, 65);
 }
 //#########################################################################################
 void DisplayDisplayWindSection(int x, int y, float angle, float windspeed, int Cradius) {
@@ -246,6 +247,20 @@ void DisplayTemperatureSection(int x, int y, int twidth, int tdepth) {
   drawString(x - 22, y + 53, String(WxConditions[0].Temperature, 1) + "°", CENTER); // Show current Temperature
   u8g2Fonts.setFont(u8g2_font_helvB10_tf);
   drawString(x + 43, y + 53, Units == "M" ? "C" : "F", LEFT);
+}
+//#########################################################################################
+void DisplayApparentTemperatureSection(int x, int y, int twidth, int tdepth) {
+  display.drawRect(x - 63, y - 1, twidth, tdepth, GxEPD_BLACK); // temp outline
+  display.drawRect(x - 63, y - 1, twidth, 19, GxEPD_BLACK); // temp outline
+  
+  u8g2Fonts.setFont(u8g2_font_helvB08_tf);
+  drawString(x + 15, y + 5, TXT_APPARENTTEMPERATURES, CENTER);
+//  u8g2Fonts.setFont(u8g2_font_helvB10_tf);
+//  drawString(x + 10, y + 82, String(WxConditions[0].High, 0) + "° | " + String(WxConditions[0].Low, 0) + "°", CENTER); // Show forecast high and Low
+  u8g2Fonts.setFont(u8g2_font_helvB24_tf);
+  drawString(x - 22, y + 45, String(WxConditions[0].ApparentTemperature, 1) + "°", CENTER); // Show current Apparent Temperature
+  u8g2Fonts.setFont(u8g2_font_helvB10_tf);
+  drawString(x + 33, y + 45, Units == "M" ? "C" : "F", LEFT);
 }
 //#########################################################################################
 void DisplayForecastTextSection(int x, int y , int fwidth, int fdepth) {
@@ -450,9 +465,9 @@ void DisplayConditionsSection(int x, int y, String IconName, bool IconSize) {
     u8g2Fonts.setFont(u8g2_font_helvB08_tf);
     drawString(x, y - 125, TXT_CONDITIONS, CENTER);
     u8g2Fonts.setFont(u8g2_font_helvB14_tf);
-    drawString(x - 25, y + 70, String(WxConditions[0].Humidity, 0) + "%", CENTER);
+    drawString(x - 35, y + 70, String(WxConditions[0].Humidity, 0) + "%", CENTER);
     u8g2Fonts.setFont(u8g2_font_helvB10_tf);
-    drawString(x + 35, y + 80, "RH", CENTER);
+    drawString(x + 40, y + 70, "rel. vlhkost", CENTER);
     if (WxConditions[0].Visibility > 0) Visibility(x - 62, y - 87, String(WxConditions[0].Visibility) + "M");
     if (WxConditions[0].Cloudcover > 0) CloudCover(x + 35, y - 87, WxConditions[0].Cloudcover);
   }

@@ -3,6 +3,7 @@
 - better Czech description
 - remove of non-printable UTF-8 characters
 - added Lat/Lon to OWM scraping
+- added Apparent Temperature to sketch (feels_like)
 
 ![photo2](IMG_20201125_135604.jpg)
 

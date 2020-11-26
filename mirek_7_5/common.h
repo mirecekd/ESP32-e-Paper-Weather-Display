@@ -42,6 +42,7 @@ bool DecodeWeather(WiFiClient& json, String Type) {
     WxConditions[0].Forecast2   = root["weather"][2]["description"].as<char*>(); Serial.println("For2: "+String(WxConditions[0].Forecast2));
     WxConditions[0].Icon        = root["weather"][0]["icon"].as<char*>();        Serial.println("Icon: "+String(WxConditions[0].Icon));
     WxConditions[0].Temperature = root["main"]["temp"].as<float>();              Serial.println("Temp: "+String(WxConditions[0].Temperature));
+    WxConditions[0].ApparentTemperature = root["main"]["feels_like"].as<float>();              Serial.println("Temp: "+String(WxConditions[0].ApparentTemperature));    
     WxConditions[0].Pressure    = root["main"]["pressure"].as<float>();          Serial.println("Pres: "+String(WxConditions[0].Pressure));
     WxConditions[0].Humidity    = root["main"]["humidity"].as<float>();          Serial.println("Humi: "+String(WxConditions[0].Humidity));
     WxConditions[0].Low         = root["main"]["temp_min"].as<float>();          Serial.println("TLow: "+String(WxConditions[0].Low));

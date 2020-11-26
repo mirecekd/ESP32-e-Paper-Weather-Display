@@ -5,6 +5,7 @@ const String TXT_FORECAST_VALUES  = "Predpoved na dalsich 72 hodin (3 dny)";
 const String TXT_CONDITIONS       = "Aktualni situace";
 const String TXT_DAYS             = "(Dny)";
 const String TXT_TEMPERATURES     = "Teplota";
+const String TXT_APPARENTTEMPERATURES = "Pocitova teplota";
 const String TXT_TEMPERATURE_C    = "Teplota (*C)";
 const String TXT_TEMPERATURE_F    = "Teplota (*F)";
 const String TXT_HUMIDITY_PERCENT = "Vlhkost (%)";
